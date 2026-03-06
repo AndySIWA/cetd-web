@@ -497,20 +497,43 @@
         }
 
         .about-content {
-            display: flex;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
             align-items: center;
-            gap: 50px;
-        }
-
-        .about-text {
-            flex: 1;
+            gap: 60px;
         }
 
         .about-img {
-            flex: 1;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 5px solid white;
+            transform: rotate(-2deg);
+            transition: var(--transition);
+        }
+
+        .about-img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .about-text {
+            position: relative;
+        }
+
+        .about-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .about-logo {
+            animation: fadeInUp 1s ease;
+        }
+
+        .about-logo img {
+            height: 70px;
+            width: auto;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
         }
 
         .stats {
@@ -1317,6 +1340,14 @@
         <div class="container">
             <h2>À Propos de Nous</h2>
             <div class="about-content">
+                <div class="about-visual">
+                    <div class="about-logo">
+                        <img src="images/Logo_CETD.PNG" alt="Logo CETD">
+                    </div>
+                    <div class="about-img">
+                        <img src="images/CETD.jpg" alt="Bureau CETD">
+                    </div>
+                </div>
                 <div class="about-text">
                     <p>Fondé en 2003 par <strong>Franklin Tchana Kontchou</strong>, le Cabinet d'Études Technique et de
                         Développement (CETD) est un bureau d'études technique et de développement d'affaires basé à
@@ -1347,9 +1378,6 @@
                             <div>Expertises internationales</div>
                         </div>
                     </div>
-                </div>
-                <div class="about-img">
-                    <img src="images/CETD.jpg" alt="Bureau CETD">
                 </div>
             </div>
         </div>
